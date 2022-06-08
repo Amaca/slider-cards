@@ -4,17 +4,17 @@
       "compile": [
         {
           "input": "src/*.html",
-          "output": "dist/",
+          "output": "docs/",
           "minify": false
         },
         {
           "input": "src/scss/main.scss",
-          "output": "dist/css/main.css",
+          "output": "docs/css/main.css",
           "minify": false
         },
         {
           "input": "src/js/main.js",
-          "output": "dist/js/main.js",
+          "output": "docs/js/main.js",
           "minify": true
         }
       ],
@@ -23,20 +23,20 @@
           "input": [
             "node_modules/swiper/swiper-bundle.css"
           ],
-          "output": "dist/css/vendors.css",
+          "output": "docs/css/vendors.css",
           "minify": true
         }
       ],
       "copy": [
         {
           "input": "src/assets/**/*.*",
-          "output": "dist/assets/"
+          "output": "docs/assets/"
         }
       ]
     }
   },
   "server": {
-    "root": "./dist/",
+    "root": "./docs/",
     "path": "/slider-cards/",
     "host": "localhost",
     "port": 9999,
