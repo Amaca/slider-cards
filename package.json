@@ -1,0 +1,36 @@
+{
+  "author": "Luca Zampetti <lzampetti@gmail.com>",
+  "name": "gulp-4-bundler",
+  "description": "Bootstrap app of the gulpfile-config bundler utility.",
+  "version": "1.0.0",
+  "license": "MIT",
+  "keywords": [
+    "gulp",
+    "bundler",
+    "es6",
+    "es2015",
+    "typescript"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/actarian/gulp-4-bundler.git"
+  },
+  "bugs": {
+    "url": "https://github.com/actarian/gulp-4-bundler/issues"
+  },
+  "homepage": "https://github.com/actarian/gulp-4-bundler",
+  "scripts": {
+    "start": "gulp",
+    "build": "gulp build --target dist",
+    "deploy": "vercel --prod"
+  },
+  "dependencies": {
+    "gsap": "^3.8.0",
+    "swiper": "7.3.0",
+    "vercel": "^23.1.2"
+  },
+  "devDependencies": {
+    "gulpfile-config": "1.0.0-alpha.19",
+    "vanillajs-datepicker": "^1.2.0"
+  }
+}

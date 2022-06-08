@@ -1,0 +1,103 @@
+@import "../core/mixins";
+@import "../core/variables";
+
+picture {
+	display: block;
+
+	img {
+		max-width: 100%;
+		height: auto;
+	}
+}
+
+.img {
+	position: relative;
+	width: 100%;
+	vertical-align: middle;
+	
+	img {
+		display: block;
+		width: 100%;
+		height: 100%;
+		max-width: none;
+		max-height: none;
+		object-fit: cover;
+		object-position: 50% 50%;
+		position: absolute;
+		top: 0;
+		left: 0;
+	}
+
+	picture {
+		position: relative;
+		overflow: hidden;
+	}
+
+	&--1-1 {
+		picture {
+			padding-bottom: 100%;
+		}
+	}
+	
+	&--3-2 {
+		picture {
+			padding-bottom: 66.66%;
+		}
+	}
+	
+	&--16-9 {
+		picture {
+			padding-bottom: 56.25%;
+		}
+	}
+
+	&--wide {
+		picture {
+			padding-bottom: 45%;
+		}
+	}
+	
+	&--widest {
+		picture {
+			padding-bottom: 30%;
+		}
+	}
+
+	&--vert {
+		picture {
+			padding-bottom: 132%;
+		}
+	}
+
+	&--h100 {
+		height: 100%;
+		
+		picture {
+			height: 100%;
+		}
+	}
+
+	&--hero {
+
+		picture {
+			height: 100vh;
+			padding-bottom: 0;
+		}
+	}
+	
+	&--hero-alt {
+
+		picture {
+			padding-bottom: 40%;
+
+            @include media-down(lg) {
+                padding-bottom: 60%;
+            }
+
+            @include media-down(xs) {
+				height: 100vh;
+				padding-bottom: 0;
+			}
+		}
+	}
+}

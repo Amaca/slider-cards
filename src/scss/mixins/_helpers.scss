@@ -1,0 +1,45 @@
+@use "sass:math";
+
+@mixin clearfix {
+	content: '';
+	display: table;
+	clear: both;
+}
+
+@mixin font($style: regular) {
+    font-style: normal;
+    font-display: swap;
+    font-family: Arial;
+    
+    @if $style==regular {
+        font-weight: 400;
+    }
+
+    @if $style==bold {
+        font-weight: 700;
+    }
+}
+
+@function pxrem($pixels) {
+    @return #{math.div($pixels, $body-font-size)}rem;
+    //@return 1rem;
+}
+
+@mixin media-hover() {
+    @media (hover: hover) {
+        &:hover {
+            @content;
+        }
+    }
+
+    &:focus-visible {
+        @content;
+    }
+}
+
+@mixin placeholder {
+    &::-webkit-input-placeholder { @content }
+    &:-moz-placeholder           { @content }
+    &::-moz-placeholder          { @content }
+    &:-ms-input-placeholder      { @content }
+  }

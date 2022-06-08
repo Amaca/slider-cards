@@ -1,0 +1,199 @@
+@import "../core/mixins";
+@import "../core/variables";
+
+.carousel {
+    
+    .container {
+        position: relative;
+    }
+
+    .swiper {
+        margin-left: auto;
+        margin-right: auto;
+        position: relative;
+        overflow: initial;
+        list-style: none;
+        padding: 0;
+        z-index: 1;
+        width: auto;
+        height: auto;
+    }
+    
+    .swiper-slide {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 22px;
+        font-weight: bold;
+        color: #fff;
+    }
+
+    .swiper-wrapper {
+        position: relative;
+        width: auto;
+        height: auto;
+        z-index: 1;
+        display: block;
+        transition-property: none;
+        box-sizing: content-box;
+        transform: translateZ(0);
+    }
+
+    .swiper-slide {
+        flex-shrink: initial;
+        width: auto;
+        height: auto;
+        position: static;
+        transition-property: none;
+        display: inline-block;
+        align-items: normal;
+        justify-content: normal;
+        font-size: unset;
+        font-weight: normal;
+        color: $black;
+    }
+
+    //start layout
+    .swiper {
+        width: 100%;
+        // height: 80vh;
+    }
+    
+    .swiper-wrapper {
+        display: flex;
+        margin: 0 auto;
+        position: relative;
+    }
+
+    .swiper-slide {
+        width: 100%;
+        height: 620px;
+        will-change: transform;
+        cursor: pointer;
+        position: relative;
+    }
+}
+
+.carousel--mobile {
+
+    .swiper {
+		position: relative;
+		overflow: initial;
+	}
+
+	.swiper-slide {
+
+		@include media-down(xs) {
+			max-width: auto;
+		}
+	}
+
+    .swiper-slide {
+        height: 580px;
+    }
+
+    .carousel__card {
+        width: 100%;
+    }
+}
+
+.carousel__card {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    overflow: hidden;
+    transition: all 800ms $outexpo;
+    border: 4px solid $white;
+    box-shadow: 0px 0px 24px -18px #000000;
+
+    @include media-down(xs) {
+        position: static;
+    }
+
+    a {
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        color: $white;
+    }
+
+    img {
+        object-fit: cover;
+        height: 100%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    &:before {
+        content: '';
+        position: absolute;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(180deg, rgba(4, 8, 9, 0) 0%, rgba(4, 8, 9, 0.5) 56.09%, rgba(4, 8, 9, 0.8) 100%);
+    }
+
+    figcaption {
+        position: absolute;
+        z-index: 2;
+        bottom: 0;
+        left: 0;
+        padding: $spacing-sm;
+        transition: all 800ms $outexpo;
+
+        .content {
+            
+            p {
+                line-height: pxrem(24);
+            }
+        }
+    }
+}
+
+.carousel__nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 0 -#{$spacing-xs} $spacing-md -#{$spacing-xs};
+
+    @include media-down(xs) {
+        display: none;
+    }
+
+    .carousel__nav-item {
+        position: relative;
+        flex-basis: 100%;
+        margin: 0 5px;
+        padding: $spacing-sm 5px;
+        cursor: pointer;
+        font-size: pxrem(15);
+        line-height: pxrem(20);
+        font-weight: $weight-bold;
+        transition: all .8s $outexpo;
+        text-align: left;
+
+        &:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            height: 2px;
+            width: 100%;
+            background: #04080926;
+            transition: all .8s $outexpo;
+        }
+
+        &.active {
+
+            &:after {
+                background: $primary;
+            }
+        }
+    }
+}

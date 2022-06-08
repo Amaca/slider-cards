@@ -1,0 +1,108 @@
+@import "../core/mixins";
+@import "../core/variables";
+
+[link-to],
+button,
+a {
+	cursor: pointer;
+	border: 0;
+	background: none;
+	text-transform: none;
+	display: inline-block;
+
+	&,
+	&:hover,
+	&:active,
+	&:focus,
+	&:visited {
+		text-decoration: none;
+		outline-color: black;
+	}
+}
+
+
+a {
+	color: $primary;
+	text-decoration: underline;
+	font-weight: normal;
+
+	&:hover {
+		color: $black;
+		text-decoration: none;
+	}
+}
+
+//BUTTONS ELEMENTS
+%btn {
+    position: relative;
+    z-index: 1;
+	color: $dark;
+    padding: 18px 24px;
+    font-weight: 700;
+    font-size: pxrem(20);
+	min-width: 335px;
+	text-align: left;
+	text-decoration: auto;
+
+	@include media-down(sm) {
+		min-width: auto;
+		font-size: pxrem(16);
+	}
+
+	@include media-down(xs) {
+		display: block;
+		width: 100%;
+	}
+
+    &:before {
+        content: '';
+        position: absolute;
+		z-index: 0;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+        border: 2px solid $dark;
+        transition: all .6s $smooth;
+    }
+
+	&:after {
+		content: '';
+		position: absolute;
+		z-index: -1;
+		top: 0;
+        left: 0;
+		width: 100%;
+		height: 100%;
+		background: $primary;
+        transform: translate(4px, 4px);
+        transition: all .6s $smooth;
+	}
+
+	@include media-hover() {
+		&:after {
+			transform: translate(0, 0);
+		}
+	}
+}
+
+.btn--main {
+	@extend %btn;
+	color: $primary;
+	text-align: center;
+	padding: 18px 22px 18px 22px;
+	transition: all $smooth .3s;
+
+	&:before {
+		border-color: $primary;
+	}
+
+	&:after {
+		display: none;
+	}
+
+	@include media-hover {
+		color: $white;
+		background: $primary;
+	}
+}

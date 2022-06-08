@@ -1,0 +1,282 @@
+@import "../core/mixins";
+@import "../core/variables";
+
+.content {
+
+    & > * {
+        margin-top: $spacing-md;
+
+        @include media-down(xs) {
+            margin-top: $spacing-sm;
+        }
+
+        &:first-child {
+            margin-top: 0;
+        }
+    }
+    
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        color: $primary;
+    }
+
+    strong,
+    a {
+        color: $primary;
+    }
+
+    p {
+        @extend %text-md; 
+    }
+
+    blockquote {
+        @extend %title-md;
+        color: $primary;
+        position: relative;
+        font-style: italic;
+        font-weight: $weight-normal;
+        margin-bottom: $spacing-md;
+        
+        @include media-down(sm) {
+            padding-left: 45px;
+            margin-bottom: $spacing-sm;
+        }
+
+        p {
+            @extend %text-md;
+            font-weight: $weight-normal;
+        }
+
+        p + p {
+            margin-top: $spacing-sm;
+        }
+    }
+
+    blockquote + figcaption {
+        @extend %text-xs;
+
+        cite {
+            color: $dark;
+            font-weight: $weight-bold;
+            font-style: normal;
+        }
+
+        strong {
+            color: $dark;
+        }
+    }
+
+    ul {
+        @extend %text-md; 
+
+        li {
+            padding-left: $spacing-md;
+            position: relative;
+
+            &:before {
+                color: $primary;
+                content: '';
+                position: absolute;
+                left: 0;
+                top: 14px;
+                width: 8px;
+                height: 8px;
+                border-radius: 100%;
+
+                @include media-down(sm) {
+                    top: 10px;
+                }
+            }
+        }
+    }
+
+    address {
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6,
+        p,
+        a {
+            color: $dark;
+        }
+
+        p,
+        a,
+        li {
+            @extend %text-xs;
+        }
+
+        li {
+            padding: 0;
+
+            &:before {
+                display: none;
+            }
+        }
+
+        p {
+            margin-bottom: $spacing-sm;
+        }
+
+        a {
+            text-decoration: none;
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+
+        .ico-svg {
+            width: 10px;
+            height: 10px;
+        }
+    }
+
+    .subtitle {
+        @extend %title-xs;
+        font-weight: $weight-bold;
+    }
+
+    .eyelet {
+        @extend %text-sm;
+
+        picture {
+            margin-right: $spacing-xs;
+        }
+
+        span {
+           color: $primary;
+        }
+    }
+}
+
+//content light
+.content--light {
+        
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    strong,
+    p,
+    a,
+    blockquote,
+    figcaption,
+    cite,
+    ul,
+    li,
+    label,
+    .title,
+    .eyelet {
+        color: $white;
+
+        .ico-svg {
+            fill: $white;
+        }
+    }
+
+    li {
+        &:before {
+            background-color: $white;
+        }
+    }
+
+    .title {
+
+        .ico-svg {
+            fill: $white;
+        }
+    }
+}
+
+//content dark
+.content--dark {
+        
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    strong,
+    p,
+    a,
+    blockquote,
+    figcaption,
+    cite,
+    ul,
+    li,
+    label,
+    .title,
+    .eyelet {
+        color: $dark;
+
+        .ico-svg {
+            fill: $dark;
+        }
+    }
+
+    li {
+        &:before {
+            background-color: $dark;
+        }
+    }
+
+    .title {
+
+        .ico-svg {
+            fill: $dark;
+        }
+    }
+}
+
+//content small
+.content--small {
+
+    p {
+        @extend %text-sm;
+    }
+
+    blockquote {
+        @extend %title-sm;
+        margin-bottom: $spacing-sm;
+        
+        @include media-down(sm) {
+            margin-bottom: $spacing-xs;
+        }
+    }
+
+    ul {
+        @extend %text-sm;
+    }
+}
+
+//content strict
+.content--strict {
+
+    & > * {
+        margin-top: $spacing-sm;
+
+        &:first-child {
+            margin-top: 0;
+        }
+    }
+
+    @include media-down(lg) {
+        & > * {
+            margin-top: $spacing-xs;
+    
+            &:first-child {
+                margin-top: 0;
+            }
+        }
+    }
+}

@@ -1,0 +1,185 @@
+@import "mixins";
+@import "variables";
+
+html {
+	box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: inherit;
+}
+
+@at-root {
+	@-ms-viewport {
+		width: device-width;
+	}
+}
+
+//
+// Reset HTML, body, and more
+//
+
+html {
+    line-height: 1.2;
+	-webkit-text-size-adjust: 100%;
+	-ms-overflow-style: scrollbar;
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+body {
+    -webkit-overflow-scrolling: touch;
+    overflow-x: hidden;
+}
+
+
+//
+// Typography
+//
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	margin-top: 0;
+	margin-bottom: 0;
+}
+
+p {
+	margin-top: 0;
+	margin-bottom: 0;
+}
+
+// Abbreviations
+abbr[title],
+abbr[data-original-title] {
+	cursor: help;
+}
+
+address {
+	font-style: normal;
+	line-height: inherit;
+	margin: 0;
+}
+
+ol,
+ul,
+dl {
+	margin-top: 0;
+	margin-bottom: 0;
+}
+
+ol ol,
+ul ul,
+ol ul,
+ul ol {
+	margin-bottom: 0;
+}
+
+dd {
+	margin-bottom: 0;
+	margin-left: 0; // Undo browser default
+}
+
+blockquote {
+	margin: 0 0 1rem;
+}
+
+//
+// Images
+//
+
+img {
+	vertical-align: middle;
+}
+
+[role="button"] {
+	cursor: pointer;
+}
+
+//
+// Links
+//
+
+a,
+area,
+button,
+[role="button"],
+input,
+label,
+select,
+summary,
+textarea {
+	touch-action: manipulation;
+}
+
+//
+// Tables
+//
+
+table {
+	border-collapse: collapse;
+}
+
+caption {
+	text-align: left;
+	caption-side: bottom;
+}
+
+th {
+	text-align: left;
+}
+
+//
+// Forms
+//
+
+label {
+	display: inline-block;
+}
+
+button:focus {
+	outline: 1px dotted;
+	outline: 5px auto -webkit-focus-ring-color;
+}
+
+input,
+button,
+select,
+textarea {
+	line-height: inherit;
+}
+
+input[type="date"],
+input[type="time"],
+input[type="datetime-local"],
+input[type="month"] {
+	-webkit-appearance: listbox;
+}
+
+textarea {
+	resize: vertical;
+}
+
+fieldset {
+	min-width: 0;
+	padding: 0;
+	margin: 0;
+	border: 0;
+}
+
+
+input[type="search"] {
+	-webkit-appearance: none;
+}
+
+output {
+	display: inline-block;
+}
+
+[hidden] {
+	display: none !important;
+}

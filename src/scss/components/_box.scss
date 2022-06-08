@@ -1,0 +1,44 @@
+@import "../core/mixins";
+@import "../core/variables";
+
+.box {
+
+	.title,
+	.title--sm,
+	.title--xs {
+		color: $primary;
+	}
+
+	.title + .text {
+		margin-top: $spacing-sm;
+	}
+}
+
+
+// heading inline
+.box--heading-inline {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+
+	.title {
+		@extend %title-md; 
+	}
+	
+	.title--sm {
+		@extend %title-sm; 
+	}
+
+	.title--xs {
+		@extend %title-xs; 
+	}
+
+	.text {
+		@extend %text-sm; 
+	}
+}
+
+.box--heading-inline+* {
+	margin-top: $spacing-md;
+}
+

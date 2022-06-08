@@ -1,0 +1,198 @@
+@import "mixins";
+@import "variables";
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+body,
+html {
+    @include font($style:regular);
+    font-size: $font-main;
+    font-weight: $weight-normal;
+    line-height: 1.5;
+}
+
+%title {
+    @include font($style:bold);
+    letter-spacing: -0.02em;   
+}
+
+%title-xl {
+    @extend %title; //this
+    font-size: pxrem(120);
+    line-height: pxrem(120);
+
+    @include media-down(sm) {
+        font-size: pxrem(58);
+        line-height: pxrem(60);
+    }
+}
+
+%title-lg {
+    @extend %title; //this
+    font-size: pxrem(72);
+    line-height: pxrem(80);
+
+    @include media-down(md) {
+        font-size: pxrem(60);
+        line-height: pxrem(70);
+    }
+
+    @include media-down(sm) {
+        font-size: pxrem(48);
+        line-height: pxrem(50);
+    }
+}
+
+%title-md {
+    @extend %title; //this
+    font-size: pxrem(60);
+    line-height: pxrem(72);
+
+    @include media-down(sm) {
+        font-size: pxrem(40);
+        line-height: pxrem(48);
+    }
+}
+
+%title-sm {
+    @extend %title; //this
+    font-size: pxrem(48);
+    line-height: pxrem(60);
+
+    @include media-down(sm) {
+        font-size: pxrem(30);
+        line-height: pxrem(40);
+    }
+}
+
+%title-xs {
+    @extend %title; //this
+    font-size: pxrem(36);
+    line-height: pxrem(48);
+
+    @include media-down(sm) {
+        font-size: pxrem(24);
+        line-height: pxrem(30);
+    }
+}
+
+%title-xxs {
+    @extend %title; //this
+    font-size: pxrem(24);
+    line-height: pxrem(30);
+
+    @include media-down(md) {
+        font-size: pxrem(18);
+        line-height: pxrem(22);
+    }
+}
+
+%title-xxxs {
+    @extend %title; //this
+    font-size: pxrem(18);
+    line-height: pxrem(30);
+
+    @include media-down(sm) {
+        font-size: pxrem(16);
+        line-height: pxrem(20);
+    }
+}
+
+%text-md {
+    font-size: pxrem(24);
+    line-height: pxrem(36);
+
+    @include media-down(sm) {
+        font-size: pxrem(20);
+        line-height: pxrem(32);
+    }
+
+    @include media-down(xs) {
+        font-size: pxrem(16);
+        line-height: pxrem(24);
+    }
+}
+
+%text-sm {
+    font-size: pxrem(18);
+    line-height: pxrem(30);
+
+    @include media-down(sm) {
+        font-size: pxrem(16);
+        line-height: pxrem(20);
+    }
+}
+
+%text-xs {
+    font-size: pxrem(16);
+    line-height: pxrem(24);
+
+    @include media-down(md) {
+        font-size: pxrem(14);
+        line-height: pxrem(18);
+    }
+}
+
+%text-xxs {
+    font-size: pxrem(14);
+    line-height: pxrem(24);
+}
+
+h1,
+.h1 {
+    @extend %title-lg; //this
+
+    &._hero {
+       @extend %title-xl; //this
+    }
+}
+
+h2,
+.h2 {
+   @extend %title-md; //this
+}
+
+h3,
+.h3 {
+   @extend %title-sm; //this
+}
+
+h4,
+.h4 {
+    @extend %title-xs; //this
+}
+
+h5,
+.h5 {
+   @extend %title-xxs; //this
+}
+
+h6,
+.h6 {
+   @extend %title-xxxs; //this
+}
+
+p {
+    margin: 0;
+    padding: 0;
+
+    @extend %text-xs; //this
+
+    &._big {
+        @extend %text-md; //this
+    }
+
+    span {
+        display: block;
+    }
+}
+
+span.label {
+    font-size: pxrem(18);
+    line-height: pxrem(24);
+
+    @include media-down(sm) {
+        font-size: pxrem(14);
+        line-height: pxrem(14);
+    }
+}

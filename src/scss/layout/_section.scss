@@ -1,0 +1,25 @@
+@import "../core/mixins";
+@import "../core/variables";
+
+.section {
+    margin-top: $spacing-xl;
+
+    @include media-down(sm) {
+        margin-top: $spacing-lg;
+    }
+
+    & > .box--heading-inline {
+
+        .title {
+            @extend %title-xs; 
+        }
+    }
+
+    &:last-child {
+        padding-bottom: $spacing-xl;
+    }
+}
+
+.section--overflow {
+    overflow: hidden;
+}

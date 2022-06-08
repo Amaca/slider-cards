@@ -1,0 +1,46 @@
+﻿{
+  "targets": {
+    "browser": {
+      "compile": [
+        {
+          "input": "src/*.html",
+          "output": "dist/",
+          "minify": false
+        },
+        {
+          "input": "src/scss/main.scss",
+          "output": "dist/css/main.css",
+          "minify": false
+        },
+        {
+          "input": "src/js/main.js",
+          "output": "dist/js/main.js",
+          "minify": true
+        }
+      ],
+      "bundle": [
+        {
+          "input": [
+            "node_modules/swiper/swiper-bundle.css"
+          ],
+          "output": "dist/css/vendors.css",
+          "minify": true
+        }
+      ],
+      "copy": [
+        {
+          "input": "src/assets/**/*.*",
+          "output": "dist/assets/"
+        }
+      ]
+    }
+  },
+  "server": {
+    "root": "./dist/",
+    "path": "/slider-cards/",
+    "host": "localhost",
+    "port": 9999,
+    "log": false
+  },
+  "tfs": false
+}
